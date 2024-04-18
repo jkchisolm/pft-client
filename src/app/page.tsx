@@ -1,11 +1,19 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24 bg-light-bg dark:bg-dark-bg dark:text-white">
       <nav className="flex flex-row justify-between items-center w-full">
         <h2 className="font-bold text-3xl">Personal Finance Tracker</h2>
-        <div>buttons</div>
+        <div className="flex flex-row">
+          <Link href="/signin">
+            <button className="m-2 hover:underline">Sign In</button>
+          </Link>
+          <Link href="/signup">
+            <button className="m-2 hover:underline">Sign Up</button>
+          </Link>
+        </div>
       </nav>
       <section className="flex flex-col justify-center items-center">
         <h1 className="text-7xl font-bold">
