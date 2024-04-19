@@ -19,9 +19,27 @@ export default function Page() {
         </div>
         <div className="mb-4">
           <Input
+            type="string"
+            name="name"
+            label="Name"
+            placeholder="John Doe"
+            required
+          />
+        </div>
+        <div className="mb-4">
+          <Input
             type="password"
             name="password"
             label="Password"
+            placeholder="********"
+            required
+          />
+        </div>
+        <div className="mb-4">
+          <Input
+            type="password"
+            name="confirmPassword"
+            label="Confirm Password"
             placeholder="********"
             required
           />
