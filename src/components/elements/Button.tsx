@@ -24,7 +24,7 @@ export const Button = (props: Props) => {
   }
   return (
     <button
-      className={`w-full py-3 text-lg ${color} transition-all hover:brightness-90 ${
+      className={`w-full py-3 px-3 text-lg ${color} transition-all hover:brightness-90 ${
         props.rounded ? "rounded-full" : "rounded-sm"
       }`}
       type={props.type}
