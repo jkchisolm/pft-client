@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen min-w-screen flex-col items-center justify-between p-10 text-center bg-gradient-to-br from-white from-50% to-cerulean to-90%">
+    <main className="flex min-h-screen min-w-screen flex-col items-center justify-between p-10 text-center bg-gradient-to-tr from-light-bg from-5%">
       <nav className="flex flex-row justify-between items-center w-full">
         <div>
           <h2 className="font-bold text-3xl">MyWallet</h2>
