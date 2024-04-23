@@ -8,31 +8,23 @@ export const signin = async (prevState: unknown, formData: FormData) => {
     password: formData.get("password") as string,
   };
 
-  const result = await fetch("http://localhost:4000/auth/login", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(authInfo),
-  });
-
-  if (result.status == 404) {
-    const error = {
-      fieldValues: authInfo,
-      fieldErrors: {
-        email: "Email not found",
-        password: null,
+  const result = await fetch(
+    process.env.NEXT_PUBLIC_SERVER_URL + "auth/login",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
       },
-    };
-    return error;
-  }
+      body: JSON.stringify(authInfo),
+    }
+  );
 
   if (result.status == 401) {
     const error = {
       fieldValues: authInfo,
       fieldErrors: {
         email: null,
-        password: "Incorrect password",
+        password: "Incorrect email or password",
       },
     };
     return error;
