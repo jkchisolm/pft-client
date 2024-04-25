@@ -53,5 +53,5 @@ export const signup = async (prevState: unknown, formData: FormData) => {
     return error;
   }
 
-  return redirect("/app");
+  return redirect("/activate_account");
 };
