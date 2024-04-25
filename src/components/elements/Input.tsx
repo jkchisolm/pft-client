@@ -24,7 +24,13 @@ export const Input = (props: Props) => {
         placeholder={props.placeholder}
         required={props.required}
       />
-      {props.error && <p className="text-bittersweet">{props.error}</p>}
+      <p
+        className={`text-bittersweet min-h-4 max-h-4 ${
+          props.error ? "visible" : "invisible"
+        }`}
+      >
+        {props.error}
+      </p>
     </div>
   );
 };
