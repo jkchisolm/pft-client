@@ -1,7 +1,3 @@
-import { Button } from "@/components/elements/Button";
-import { Input } from "@/components/elements/Input";
-import { signup } from "@/lib/actions/signup";
-import { useFormState } from "react-dom";
 import { SignupForm } from "../components/signupForm";
 
 export default function Page() {
