@@ -53,6 +53,16 @@ export const SignupForm = () => {
         </div>
         <div className="mb-4">
           <Input
+            type="date"
+            name="dob"
+            label="Date of Birth"
+            placeholder="YYYY-MM-DD"
+            error={errorState?.fieldErrors.dob}
+            required
+          />
+        </div>
+        <div className="mb-4">
+          <Input
             type="password"
             name="password"
             label="Password"

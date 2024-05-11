@@ -9,6 +9,7 @@ export const signup = async (prevState: unknown, formData: FormData) => {
     lastname: formData.get("lastname") as string,
     password: formData.get("password") as string,
     confirmPassword: formData.get("confirmPassword") as string,
+    dob: formData.get("dob") as string,
   };
 
   // Check if the password and confirmPassword fields match
@@ -21,10 +22,15 @@ export const signup = async (prevState: unknown, formData: FormData) => {
         lastname: null,
         password: "Passwords do not match",
         confirmPassword: "Passwords do not match",
+        dob: null,
       },
     };
     return error;
   }
+
+  // reformat dob to YYYY-MM-DD
+  const dob = new Date(authInfo.dob);
+  authInfo.dob = dob.toISOString().split("T")[0];
 
   const result = await fetch(
     process.env.NEXT_PUBLIC_SERVER_URL + "auth/register",
@@ -48,6 +54,7 @@ export const signup = async (prevState: unknown, formData: FormData) => {
         lastname: null,
         password: null,
         confirmPassword: null,
+        dob: null,
       },
     };
     return error;
